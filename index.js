@@ -22,12 +22,15 @@ app.get('/', function (req, res) {
   res.send('Mi primer servidor!');
 });
 
-app.get('/api', function (req, res) {
+app.get('/post', function (req, res) {
   var cantidad = _.random(5,10)
   var usuarios = _.times(cantidad, generarUsuario)
   res.json(usuarios);
 });
 
+app.get('/about', function (req, res) {
+  res.send('by JMitac');
+});
 
 app.listen(3000,function(){
   console.log("La Aplicacion esta corriendo en el puerto 3000");
